@@ -1,3 +1,7 @@
 bugfix
 adasdasd
+<<<<<<< HEAD
 mégegyszer
+=======
+asdads
+>>>>>>> ksz
