@@ -4,4 +4,4 @@ adasdasd
 mégegyszer
 =======
 asdads
->>>>>>> ksz
+>>>>>>> ksz++++
