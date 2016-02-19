@@ -1,4 +1,7 @@
 bugfix
+<<<<<<< HEAD
 adasdasd
 mégegyszeradasdasd
 asdads
+=======
+>>>>>>> 57fdad1b8d518acda8dce4c1a5ecf66c67fb5382
