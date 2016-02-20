@@ -1,2 +1,7 @@
-Más
-TESZT
+Tutu: 
+
+Key generálása:
+https://help.github.com/articles/generating-ssh-keys/
+
+Key alkalmazása TortoiseGitben
+http://serverfault.com/questions/194567/how-do-i-tell-git-for-windows-where-to-find-my-private-rsa-key/198614#198614
