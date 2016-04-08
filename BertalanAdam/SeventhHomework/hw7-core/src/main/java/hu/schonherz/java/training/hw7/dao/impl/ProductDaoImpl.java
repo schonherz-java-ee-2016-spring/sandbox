@@ -3,6 +3,7 @@ package hu.schonherz.java.training.hw7.dao.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -12,6 +13,7 @@ import hu.schonherz.java.training.hw7.dto.Product;
 
 //Repository tells spring that this class is a DAO
 @Repository
+@Lazy(true)
 public class ProductDaoImpl implements ProductDao {
 	
 	// Autowired tells spring that this is a dependency for this class that should be injected.

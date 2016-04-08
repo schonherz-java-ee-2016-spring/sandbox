@@ -11,13 +11,16 @@
 		http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd 
 		http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
+	<context:annotation-config />
+	<context:component-scan base-package="hu.schonerz.java.training" />
 
-	<context:component-scan base-package="hu.schonerz.java.training.hw7.web" />
-	
-	<bean class="hu.schonerz.java.training.hw7.service.impl.UserServiceImpl" />
-	<bean class="hu.schonerz.java.training.hw7.service.impl.ProductServiceImpl" />
-	<bean class="hu.schonerz.java.training.hw7.service.impl.OrderServiceImpl" />
-	
-	<import resource="classpath:hw7-core-configuration.xml"/>
-	
+	<bean class="hu.schonerz.java.training.hw7.service.impl.UserServiceImpl"
+		autowire-candidate="true" />
+	<bean class="hu.schonerz.java.training.hw7.service.impl.ProductServiceImpl"
+		autowire-candidate="true" />
+	<bean class="hu.schonerz.java.training.hw7.service.impl.OrderServiceImpl"
+		autowire-candidate="true" />
+
+	<import resource="classpath:hw7-core-configuration.xml" />
+
 </beans>

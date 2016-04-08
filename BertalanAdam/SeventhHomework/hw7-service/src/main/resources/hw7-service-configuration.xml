@@ -9,18 +9,18 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
 
-	<!-- 
-		What context:component-scan does is that it tells the spring to search for
-		annotations like @Repository, @Controller, @Service and @Component in all classes under the given package,
-		and register them as a bean just like we would write them here like this: 
-		<bean class="..." />
-	-->
-	<context:component-scan base-package="hu.schonherz.java.training.hw7.service" />
-	
-	<bean class="hu.schonherz.java.training.hw7.dao.impl.OrderDaoImpl" />
-	
-	<bean class="hu.schonherz.java.training.hw7.dao.impl.ProductDaoImpl" />
+	<!-- What context:component-scan does is that it tells the spring to search 
+		for annotations like @Repository, @Controller, @Service and @Component in 
+		all classes under the given package, and register them as a bean just like 
+		we would write them here like this: <bean class="..." /> -->
+	<context:annotation-config />
 
-	<bean class="hu.schonherz.java.training.hw7.dao.impl.UserDaoImpl" />
+	<context:component-scan base-package="hu.schonherz.java.training.hw7.service" />
+
+	<bean class="hu.schonherz.java.training.hw7.dao.impl.OrderDaoImpl" autowire-candidate="true" />
+
+	<bean class="hu.schonherz.java.training.hw7.dao.impl.ProductDaoImpl" autowire-candidate="true" />
+
+	<bean class="hu.schonherz.java.training.hw7.dao.impl.UserDaoImpl" autowire-candidate="true" />
 
 </beans>

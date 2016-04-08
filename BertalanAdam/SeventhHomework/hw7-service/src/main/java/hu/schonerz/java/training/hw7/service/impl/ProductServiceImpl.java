@@ -3,6 +3,7 @@ package hu.schonerz.java.training.hw7.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import hu.schonerz.java.training.hw7.service.ProductService;
@@ -12,7 +13,8 @@ import hu.schonherz.java.training.hw7.dao.ProductDao;
 import hu.schonherz.java.training.hw7.dto.Product;
 
 //Tells spring that this class is a service class.
-@Service
+@Service("productService")
+@Lazy(true)
 public class ProductServiceImpl implements ProductService {
 
 	@Autowired

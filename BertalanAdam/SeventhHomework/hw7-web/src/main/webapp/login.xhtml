@@ -9,9 +9,9 @@
 <h:body>
 	<h2>Login</h2>
 	<h:form id="loginForm">
-		Username: <h:inputText id="userInputName" value="#{login.username}" /><br/>
-		Password: <h:inputSecret id="userInputPassword" value="#{login.password}"/><br/>
-		<h:commandButton action="#{login.validateUserAndPassword}"  value="Login" />
+		Username: <h:inputText id="userInputName" value="#{loginBean.username}" /><br/>
+		Password: <h:inputSecret id="userInputPassword" value="#{loginBean.password}"/><br/>
+		<h:commandButton action="#{loginBean.validateUserAndPassword}"  value="Login" />
 	</h:form>
 </h:body>
 </html>
