@@ -34,8 +34,16 @@ public class AnswerNote implements Serializable{
 	}
 
 	@Column(name = "note")
-	@Lob
+//	@Lob
 	private String note;
+
+	public Answer getAnswer() {
+		return answer;
+	}
+
+	public void setAnswer(Answer answer) {
+		this.answer = answer;
+	}
 	
 	
 	

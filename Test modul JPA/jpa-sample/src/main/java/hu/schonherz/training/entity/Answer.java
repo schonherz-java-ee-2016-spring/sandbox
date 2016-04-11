@@ -31,6 +31,22 @@ public class Answer extends BaseEntity {
 		return isRight;
 	}
 
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Option getOption() {
+		return option;
+	}
+
+	public void setOption(Option option) {
+		this.option = option;
+	}
+
 	public void setRight(boolean isRight) {
 		this.isRight = isRight;
 	}

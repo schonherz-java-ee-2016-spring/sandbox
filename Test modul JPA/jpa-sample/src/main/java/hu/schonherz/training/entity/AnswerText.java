@@ -36,6 +36,14 @@ public class AnswerText implements Serializable {
 	@JoinColumn(name = "answer_id", referencedColumnName = "id")
 	private Answer answer;
 
+	public Answer getAnswer() {
+		return answer;
+	}
+
+	public void setAnswer(Answer answer) {
+		this.answer = answer;
+	}
+
 	// LOB
 	@Column(name = "text")
 	private String text;
