@@ -2,38 +2,18 @@ package hu.schonherz.training.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "test")
-public class Test {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+@Table(name = "Test")
+public class Test extends BaseEntity {
+	private static final long serialVersionUID = 1L;
 
 	@Column(unique = true)
 	private String title;
 
 	public Test() {
 		super();
-	}
-
-	public Test(Long id, String title) {
-		super();
-		this.id = id;
-		this.title = title;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getTitle() {
