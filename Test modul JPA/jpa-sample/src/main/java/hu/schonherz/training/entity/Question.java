@@ -10,14 +10,15 @@ import javax.persistence.Table;
 @Table(name = "Question")
 public class Question extends BaseEntity {
 	private static final long serialVersionUID = 1L;
-	
+
 	@OneToOne
 	@JoinColumn(name = "testId")
 	private Test test;
-	
-//	@OneToOne
-//	@JoinColumn(name = "typeId")
-//	private Type type;
+
+	// Can be @OneToMany / @ManyToOne
+	@OneToOne
+	@JoinColumn(name = "questionTypeId")
+	private QuestionType questionType;
 
 	@Column(name = "text")
 	private String text;
@@ -34,7 +35,8 @@ public class Question extends BaseEntity {
 	}
 
 	/**
-	 * @param test the test to set
+	 * @param test
+	 *            the test to set
 	 */
 	public void setTest(Test test) {
 		this.test = test;
@@ -48,10 +50,11 @@ public class Question extends BaseEntity {
 	}
 
 	/**
-	 * @param text the text to set
+	 * @param text
+	 *            the text to set
 	 */
 	public void setText(String text) {
 		this.text = text;
 	}
-	
+
 }
