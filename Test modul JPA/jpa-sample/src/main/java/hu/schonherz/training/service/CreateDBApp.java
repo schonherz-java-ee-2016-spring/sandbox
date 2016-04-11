@@ -24,7 +24,7 @@ public class CreateDBApp {
 		
 		Option option = new Option();
 		option.setIsCorrect(true);
-		option.setOptionText("nonononoononoo");
+		option.setOptionText("asd");
 		option.setQuestion(question);
 		
 
