@@ -17,10 +17,10 @@ public class Option extends BaseEntity {
 	@JoinColumn(name = "question_id", referencedColumnName = "id")
 	private Question question;
 	
-	@Column(nullable = true)
+	@Column(name = "is_correct", nullable = true)
 	private Boolean isCorrect;
 	
-	@Column(nullable = true)
+	@Column(name = "option_text", nullable = true)
 	private String optionText;
 
 	public Option() {

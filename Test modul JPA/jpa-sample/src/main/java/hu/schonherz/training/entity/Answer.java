@@ -20,7 +20,7 @@ public class Answer extends BaseEntity {
 	@JoinColumn(name = "option_id", referencedColumnName = "id")
 	private Option option;
 
-	@Column(nullable = true)
+	@Column(name = "is_right", nullable = true)
 	private Boolean isRight;
 
 	public Answer() {
