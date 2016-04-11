@@ -11,7 +11,7 @@ public class Option extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 
 	@OneToOne
-	@JoinColumn(name = "Question_id", referencedColumnName = "id")
+	@JoinColumn(name = "question_id", referencedColumnName = "id")
 	private Question question;
 	
 	private Boolean isCorrect;

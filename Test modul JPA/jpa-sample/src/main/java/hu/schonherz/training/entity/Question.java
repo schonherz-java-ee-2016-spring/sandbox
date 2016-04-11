@@ -12,12 +12,12 @@ public class Question extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 	
 	@OneToOne
-	@JoinColumn(name = "testId")
+	@JoinColumn(name = "test_id", referencedColumnName = "id")
 	private Test test;
 	
-//	@OneToOne
-//	@JoinColumn(name = "typeId")
-//	private Type type;
+	@OneToOne
+	@JoinColumn(name = "type_id", referencedColumnName = "id")
+	private QuestionType questionType;
 
 	@Column(name = "text")
 	private String text;
