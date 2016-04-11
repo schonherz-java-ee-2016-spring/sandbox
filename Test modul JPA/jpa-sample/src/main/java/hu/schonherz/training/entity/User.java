@@ -4,10 +4,12 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "User")
+@Table(name = "user")
 public class User extends BaseEntity {
 
-	private static final long serialVersionUID = -4757582250321690888L;
+	private static final long serialVersionUID = 1L;
+
+
  
 	
 	

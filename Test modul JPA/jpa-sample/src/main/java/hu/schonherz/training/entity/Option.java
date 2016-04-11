@@ -1,20 +1,26 @@
 package hu.schonherz.training.entity;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Option")
+@Table(name = "option")
 public class Option extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "question_id", referencedColumnName = "id")
 	private Question question;
 	
+	@Column(nullable = true)
 	private Boolean isCorrect;
+	
+	@Column(nullable = true)
 	private String optionText;
 
 	public Option() {

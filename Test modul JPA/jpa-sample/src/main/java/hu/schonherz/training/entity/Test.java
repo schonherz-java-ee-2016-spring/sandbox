@@ -5,11 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Test")
+@Table(name = "test")
 public class Test extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 
-	@Column(unique = true)
+	@Column(unique = true, nullable = false)
 	private String title;
 
 	public Test() {

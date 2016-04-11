@@ -7,7 +7,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Question")
+@Table(name = "question")
 public class Question extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 	
@@ -19,6 +19,7 @@ public class Question extends BaseEntity {
 	@JoinColumn(name = "type_id", referencedColumnName = "id")
 	private QuestionType questionType;
 
+	// Rich text pls
 	@Column(name = "text")
 	private String text;
 

@@ -5,11 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "QuestionType")
+@Table(name = "question_type")
 public class QuestionType extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 
-	@Column(name = "name")
+	@Column(nullable = false, unique = true)
 	private String name;
 
 	public QuestionType() {

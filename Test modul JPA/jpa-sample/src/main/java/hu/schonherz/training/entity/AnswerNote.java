@@ -11,20 +11,23 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "AnswerNote")
-public class AnswerNote implements Serializable{
+@Table(name = "answer_note")
+public class AnswerNote implements Serializable {
+	private static final long serialVersionUID = 1L;
 
-	private static final long serialVersionUID = -3111379203999866096L;
+	@Id
+	@OneToOne
+	@JoinColumn(name = "answer_id", referencedColumnName = "id")
+	private Answer answer;
+
+	@Column(nullable = true)
+	@Lob
+	private String note;
 
 	public AnswerNote() {
 		super();
 	}
 
-	@Id
-	@OneToOne
-	@JoinColumn(name = "answer_id", referencedColumnName = "id" )
-	private Answer answer; 
-	
 	public String getNote() {
 		return note;
 	}
@@ -33,10 +36,6 @@ public class AnswerNote implements Serializable{
 		this.note = note;
 	}
 
-	@Column(name = "note")
-//	@Lob
-	private String note;
-
 	public Answer getAnswer() {
 		return answer;
 	}
@@ -44,9 +43,5 @@ public class AnswerNote implements Serializable{
 	public void setAnswer(Answer answer) {
 		this.answer = answer;
 	}
-	
-	
-	
-	
-	
+
 }
