@@ -5,12 +5,21 @@
 	version="2.0">
 	<persistence-unit name="Test" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-<!-- 		<class>hu.schonherz.jpa.entity.Employee</class> -->
+		<class>hu.schonherz.training.entity.Answer</class>
+		<class>hu.schonherz.training.entity.AnswerNote</class>
+		<class>hu.schonherz.training.entity.AnswerText</class>
+		<class>hu.schonherz.training.entity.BaseEntity</class>
+		<class>hu.schonherz.training.entity.Option</class>
+		<class>hu.schonherz.training.entity.Question</class>
+		<class>hu.schonherz.training.entity.QuestionType</class>
+		<class>hu.schonherz.training.entity.Test</class>
+		<class>hu.schonherz.training.entity.User</class>
+
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/Test" />
 			<property name="javax.persistence.jdbc.user" value="postgres" />
-			<property name="javax.persistence.jdbc.password" value="klose12" />
+			<property name="javax.persistence.jdbc.password" value="Atkagame" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />

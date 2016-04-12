@@ -9,25 +9,20 @@ import hu.schonherz.training.vo.TestVo;
 
 public class MainApp {
 	public static void main(String[] args) throws Exception {
-		
+
 		TestService service = new TestServiceImpl();
 		TestVo testVo = new TestVo();
 		testVo.setName("First Test");
 
+		service.createTest(testVo);
 
-			service.createTest(testVo);
-			
-			
-			QuestionTypeService questionTypeService = new QuestionTypeServiceImpl();
-			QuestionTypeVo questionTypeVo = new QuestionTypeVo();
-			questionTypeVo.setName("Single Answer");
-			questionTypeService.createQuestionType(questionTypeVo);
-			questionTypeVo.setName("Multiple Answer");
-			questionTypeService.createQuestionType(questionTypeVo);
-			questionTypeVo.setName("Text Answer");
-			
-			
-
+		QuestionTypeService questionTypeService = new QuestionTypeServiceImpl();
+		QuestionTypeVo questionTypeVo = new QuestionTypeVo();
+		questionTypeVo.setName("Single Answer");
+		questionTypeService.createQuestionType(questionTypeVo);
+		questionTypeVo.setName("Multiple Answer");
+		questionTypeService.createQuestionType(questionTypeVo);
+		questionTypeVo.setName("Text Answer");
 
 	}
 }
