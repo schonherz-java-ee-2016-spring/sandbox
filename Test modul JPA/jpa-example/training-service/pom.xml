@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>hu.schonherz.training</groupId>
+		<artifactId>application</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>hu.schonherz.training.service</groupId>
+	<artifactId>training-service</artifactId>
+	<packaging>ejb</packaging>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>hu.schonherz.training.core</groupId>
+			<artifactId>training-core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>hu.schonherz.training.service</groupId>
+			<artifactId>training-service-client-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>4.2.5.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sf.dozer</groupId>
+			<artifactId>dozer</artifactId>
+			<version>5.5.1</version>
+		</dependency>
+
+
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ejb-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<jarName>blog-service</jarName>
+					<filterDeploymentDescriptor>true</filterDeploymentDescriptor>
+					<ejbVersion>3.1</ejbVersion>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>
