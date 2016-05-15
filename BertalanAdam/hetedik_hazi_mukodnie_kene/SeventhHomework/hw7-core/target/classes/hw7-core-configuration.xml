@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
+
+	<!-- 
+		What context:component-scan does is that it tells the spring to search for
+		annotations like @Repository, @Controller, @Service and @Component in all classes under the given package,
+		and register them as a bean just like we would write them here like this: 
+		<bean class="..." />
+	-->
+	<context:component-scan base-package="hu.schonherz.java.training.hw7.dao" />
+
+	<!--
+		 JNDI - Java Naming and Directory Interface will search for a Resource in the Tomcat context.xml
+		with a name of jdbc/Homework4 and makes possible to connect to a database with the information
+		given by the Resource.
+	 -->
+<!-- 	<jee:jndi-lookup id="dataSource" jndi-name="jdbc/Homework4" -->
+	<jee:jndi-lookup id="dataSource" jndi-name="java:jboss/datasources/Homework4"
+		expected-type="javax.sql.DataSource" />
+
+	<!-- This bean is responsible for the database operations and will be @Autowired in the DaoImpls
+		the constructor-arg means that the referenced DataSource bean will be injected for the spring JdbcTemplate's dependency. -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<constructor-arg ref="dataSource" />
+	</bean>
+	
+<!-- 	<bean id="txManager" -->
+<!-- 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager" -->
+<!-- 		p:dataSource-ref="dataSource" /> -->
+
+<!-- 	<tx:annotation-driven transaction-manager="txManager" /> -->
+
+
+</beans>

@@ -1,0 +1,35 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<security:http disable-url-rewriting="false">
+		<security:csrf disabled="true" />
+		<security:headers disabled="true" />
+		<security:intercept-url pattern="/comment/*"
+			access="hasRole('USER')" method="POST" />
+		<security:intercept-url pattern="/blog/*"
+			access="hasRole('BLOGGER')" method="POST" />
+		<security:intercept-url pattern="/pages/secured/*"
+			access="hasRole('USER')" />
+		<security:form-login login-page="/pages/login.jsp"
+			login-processing-url="/login" default-target-url="/index.jsp"
+			authentication-failure-url="/pages/login.jsp?error=true"
+			username-parameter="j_username" password-parameter="j_password" />
+		<security:logout logout-url="/logout"
+			logout-success-url="/index.jsp" />
+		<security:remember-me remember-me-parameter="remember-me"
+			key="myAppKey" remember-me-cookie="remember-me"
+			token-validity-seconds="86400" />
+	</security:http>
+
+
+
+	<security:authentication-manager>
+		<security:authentication-provider
+			user-service-ref="customUserDetailsService">
+			<security:password-encoder hash="bcrypt" />
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+</beans>
